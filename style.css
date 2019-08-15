@@ -1,23 +1,18 @@
 /*
-Theme Name: Cactus
-Theme URI: https://imnicy.com/cactus
+Theme Name: Simple Cactus
+Theme URI: https://github.com/imnicy/simple_cactus
 Author: imnicy
 Version: 0.1.1
 Author URI: https://imnicy.com
-Description: 主题移植至Hexo 同名主题 hexo-theme-cactus参考(抄)了部分 Alili的样式和功能。
+Description: 主题移植至Hexo 同名主题 hexo-theme-cactus
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: cactus, hexo, imnicy, black, alili
+Tags: cactus, hexo, imnicy, black
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-/*@font-face {*/
-/*    font-family: 'Meslo LG';*/
-/*    font-style: normal;*/
-/*    src: local('Meslo LG S'), url(../lib/meslo-LG/fonts/MesloLGS-Regular.woff) format('woff');*/
-/*}*/
 a {-webkit-tap-highlight-color:transparent;}
 
 .ml0,.mx0 {
