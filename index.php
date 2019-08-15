@@ -38,14 +38,8 @@
             </ul>
         </section>
 
-        <section id="projects">
-        <span class="h1">
-            <a href="#" rel="external nofollow noopener noreferrer">Projects</a></span>
-            <ul class="project-list">
-                <li class="project-item">
-                    <a href="#" rel="external nofollow noopener noreferrer" target="_blank">微前端 Protal</a>: 微前端模块加载器示例代码
-                </li>
-        </section>
+        <?php if ( dynamic_sidebar('homepage_block') ) : else : endif; ?>
+
     </section>
 </div>
 
