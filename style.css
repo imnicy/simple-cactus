@@ -1726,3 +1726,52 @@ td.hljs-ln-line.hljs-ln-numbers .hljs-ln-n {
 }
 
 code::-webkit-scrollbar {display:none}
+
+#homepage-block, #homepage-block li {
+    list-style-type:  none;
+    padding: 0;
+    margin: 0;
+}
+
+#homepage-block .widgettitle {
+    font-size: 1.5em;
+    color: #2bbc8a;
+}
+
+#homepage-block li > ul, #homepage-block li > ul > li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#calendar_wrap {
+    max-width: 25em;
+    margin-top: 40px;
+    padding: 25px;
+    background: #222222;
+}
+
+#searchform {
+    margin-top: 40px;
+}
+
+#searchform > div {
+    overflow: hidden;
+}
+
+#searchform input[type=text] {
+    width: 100%;
+    font-weight: 400;
+    padding: 2px 5px;
+    max-width: 20em;
+    min-height: 32px;
+    background: #2a2c2f;
+    color: #dddddd;
+    border: solid 1px #222222;
+    border-radius: 0;
+}
+
+#searchform input[type=submit] {
+    min-height: 28px;
+    border: 1px solid #dddddd;
+}

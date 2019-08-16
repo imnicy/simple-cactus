@@ -36,7 +36,11 @@ else {
     <meta name="google" content="notranslate" />
     <title><?php bloginfo('name'); ?> <?php wp_title( ' - ', true, 'left' ); ?></title>
 
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri() . '/images/favicon.ico' ?>">
+    <?php if ($favicon = get_theme_settings('site_favicon_url')) : ?>
+        <link rel="shortcut icon" href="<?php echo $favicon ?>">
+    <?php else : ?>
+        <link rel="shortcut icon" href="<?php echo get_template_directory_uri() . '/images/favicon.ico' ?>">
+    <?php endif ?>
 
     <meta name="keywords" content="<?php echo $keywords ?>" />
     <meta name="description" content="<?php echo $description ?>" />

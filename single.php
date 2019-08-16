@@ -42,11 +42,15 @@
                     <span id="i-top" class="info" style="display:none;">Back to top</span>
                 </span>
                 <br>
+                <?php if (get_theme_settings('display_toc')) : ?>
+
                 <div id="toc">
                     <nav id="TableOfContents">
                         <ul></ul>
                     </nav>
                 </div>
+
+                <?php endif ?>
             </span>
     </div>
     <div class="content index width mx-auto px3 my3">

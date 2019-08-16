@@ -1,9 +1,16 @@
+<?php
+    $siteName = get_bloginfo('name');
+    $icpNumber = '<a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">'.get_theme_settings('site_icp_number').'</a>';
+
+    $customFooterText = (string) get_theme_settings('custom_footer_text_style', 'Copyright © %1$s %2$s ', false);
+?>
+
 <footer id="footer">
     <div class="footer-left">
-        Copyright © <?php bloginfo('name') ?>
-        <a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">浙ICP备18045521号</a>
+        <?php echo sprintf($customFooterText, $siteName, $icpNumber) ?>
     </div>
     <div class="footer-right">
+        <?php if (get_theme_settings('display_footer_menu')) : wp_nav_menu(); endif ?>
     </div>
 </footer>
 

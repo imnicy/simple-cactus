@@ -14,7 +14,7 @@
                 <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span></span>
             </div>
 
-            <?php if ( get_the_tags() ) : ?>
+            <?php if ( get_theme_settings('display_tags') && get_the_tags() ) : ?>
 
             <div class="article-tag">
                     <i class="fa fa-tag"></i>&nbsp;
@@ -23,6 +23,7 @@
 
                 <div class="article-tag-box"></div>
             </div>
+
             <?php endif ?>
         </div>
 
@@ -35,11 +36,19 @@
 
         <?php if (is_single()) : ?>
 
-            <h2>本文链接：</h2>
-            <a href="<?php the_permalink() ?>" target="_blank"><?php the_permalink() ?></a>
+            <?php if (get_theme_settings('display_links_to_this_article')) : ?>
 
-            <h2>本文发布在：</h2>
-            <?php the_category() ?>
+                <h2>本文链接：</h2>
+                <a href="<?php the_permalink() ?>" target="_blank"><?php the_permalink() ?></a>
+
+            <?php endif ?>
+
+            <?php if (get_theme_settings('display_categories')) : ?>
+
+                <h2>本文发布在：</h2>
+                <?php the_category() ?>
+
+            <?php endif ?>
 
         <?php endif ?>
     </div>

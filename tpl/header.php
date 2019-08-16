@@ -1,6 +1,12 @@
 <header id="header">
     <a href="/">
-        <div id="logo" style="background-image: url(<?php echo get_template_directory_uri() . '/images/logo.png' ?>);"></div>
+        <div id="logo" style="background-image: url(<?php
+            if ($logo = get_theme_settings('site_logo')) :
+                echo $logo;
+            else :
+                echo get_template_directory_uri() . '/images/logo.png';
+            endif
+        ?>);"></div>
         <div id="title">
             <?php if (is_404()) : ?>
                 <h1>404 page not found</h1>

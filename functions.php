@@ -1,6 +1,7 @@
 <?php
 
 define('SIMPLE_CACTUS_VERSION', '0.1.1');
+define('SIMPLE_CACTUS_SETTING_GROUP', 'simple_cactus_theme');
 
 /**
  * require any widgets
@@ -22,9 +23,28 @@ function update_jquery() {
     }
 }
 
-function theme_options()
+function theme_options_page()
 {
     require __DIR__ . '/setting/theme_options.php';
+}
+
+function simple_cactus_option_name($name)
+{
+    return SIMPLE_CACTUS_SETTING_GROUP . '[' . $name. ']';
+}
+
+function get_theme_settings($name, $default = null, $escaping = true)
+{
+    $options = get_option(SIMPLE_CACTUS_SETTING_GROUP);
+
+    return isset($options[$name]) ? ($escaping ? esc_attr($options[$name]) : $options[$name]) : $default;
+}
+
+function theme_setting_is_checked($name)
+{
+    $value = get_theme_settings($name);
+
+    return $value == 1 ? ' checked' : '';
 }
 
 add_action('wp_enqueue_scripts', 'update_jquery', 11);
@@ -39,11 +59,14 @@ add_action('widgets_init', function() {
 });
 
 add_action('admin_menu', function() {
+
+    register_setting(SIMPLE_CACTUS_SETTING_GROUP, SIMPLE_CACTUS_SETTING_GROUP);
+
     add_theme_page(
         __('Simple Cactus theme setting', 'simple_cactus'),
         __('Theme Options', 'simple_cactus'),
         'edit_theme_options',
         'theme-options',
-        'theme_options'
+        'theme_options_page'
     );
 });

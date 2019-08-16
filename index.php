@@ -19,11 +19,13 @@
                 </span>
             </span>| Find me on</p>
             <ul id="sociallinks">
+                <?php if ($github = get_theme_settings('find_me_through_github')) : ?>
                 <li>
-                    <a class="icon" target="_blank" href="http://github.com/Fantasy9527" title="github">
+                    <a class="icon" target="_blank" href="<?php echo $github ?>" title="github">
                         <i class="fa fa-github"></i>
                     </a>
                 </li>
+                <?php endif ?>
             </ul>.
             <p></p>
             <p class="prompt ad-text output new-output">p.s. 网站已经支持PWA,可尝试添加到桌面</p>
@@ -38,12 +40,15 @@
             </ul>
         </section>
 
-        <?php if ( dynamic_sidebar('homepage_block') ) : else : endif; ?>
+        <ul id="homepage-block">
+            <?php if ( dynamic_sidebar('homepage_block') ) : else : endif; ?>
+        </ul>
 
     </section>
 </div>
 
-<script type="text/javascript" src="https://cdn.bootcss.com/typed.js/2.0.5/typed.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
 <script>
     <?php
         $remoteQuotes = file_get_contents("compress.zlib://".'https://rest.shanbay.com/api/v2/quote/quotes/today/');

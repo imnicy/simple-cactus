@@ -62,7 +62,7 @@ class BlockWidget extends WP_Widget
         $instance = [];
 
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
-        $instance['content'] = ( ! empty( $new_instance['content'] ) ) ? sanitize_text_field( $new_instance['content'] ) : '';
+        $instance['content'] = ( ! empty( $new_instance['content'] ) ) ? $new_instance['content'] : '';
         $instance['custom_html_content'] = ( ! empty( $new_instance['custom_html_content'] ) ) ? $new_instance['custom_html_content'] : '';
 
         return $instance;
@@ -87,7 +87,7 @@ class BlockWidget extends WP_Widget
             $lines = explode(PHP_EOL, $content);
             foreach ($lines as $line) {
 
-                if (! strstr($line, '|')) {
+                if (! strstr(sanitize_text_field($line), '|')) {
                     continue;
                 }
 
@@ -104,12 +104,14 @@ EOL;
         }
 
         $template = <<<EOT
-            <section id="projects">
-                <span class="h1">
-                    <a href="#" rel="external nofollow noopener noreferrer"> $title </a>
-                </span>
-                $display
-            </section>
+            <li class="homepage-block-display-n">
+                <section id="projects">
+                    <span class="h1">
+                        <a href="#" rel="external nofollow noopener noreferrer"> $title </a>
+                    </span>
+                    $display
+                </section>
+            </li>
 EOT;
 
         echo $template;
