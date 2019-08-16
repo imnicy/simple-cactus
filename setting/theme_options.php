@@ -93,18 +93,6 @@
                     </fieldset>
                 </td>
             </tr>
-            <tr>
-                <th scope="row"><?php echo __('Page Allow Comments?') ?></th>
-                <td>
-                    <fieldset>
-                        <legend class="screen-reader-text">
-                            <span><?php echo __('Page allow comments?') ?></span>
-                        </legend>
-                        <label for="page_allow_comments">
-                            <input name="<?php echo simple_cactus_option_name('page_allow_comments') ?>" <?php echo theme_setting_is_checked('page_allow_comments') ?> type="checkbox" id="page_allow_comments" value="1"><?php echo __('Page allow comments?') ?></label>
-                    </fieldset>
-                </td>
-            </tr>
             </tbody>
         </table>
         <p class="submit">

@@ -12,7 +12,7 @@
                 get_template_part('tpl/single') ;
 
                 // If comments are open or we have at least one comment, load up the comment template.
-                if ( get_theme_settings('page_allow_comments') && (comments_open() || get_comments_number()) ) {
+                if ( comments_open() || get_comments_number() ) {
                     comments_template();
                 }
             ?>
