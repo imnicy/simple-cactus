@@ -2,7 +2,7 @@
     <?php while(have_posts()) :  the_post(); ?>
     <li class="post-item">
         <div class="meta">
-            <time datetime="<?php the_time('F j, Y') ?>" itemprop="datePublished"><?php the_time('F j, Y') ?></time>
+            <time datetime="<?php the_time(get_option('date_format')) ?>" itemprop="datePublished"><?php the_time(get_option('date_format')) ?></time>
         </div>
         <span><a href="<?php the_permalink() ?>"><?php the_title() ?></a></span>
     </li>

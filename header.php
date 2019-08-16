@@ -46,8 +46,8 @@ else {
     <meta name="description" content="<?php echo $description ?>" />
     <meta name="author" content="IMNICY">
 
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/justifiedGallery/3.7.0/css/justifiedGallery.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/justifiedGallery/3.7.0/css/justifiedGallery.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/style.css' ?>">
 

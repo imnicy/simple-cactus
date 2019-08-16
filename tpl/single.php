@@ -5,9 +5,10 @@
         <h1 class="posttitle" itemprop="name headline"><?php the_title() ?></h1>
 
         <?php if (is_single()) : ?>
+
         <div class="meta">
             <div class="postdate">
-                <time datetime="<?php the_time('F j, Y') ?>" itemprop="datePublished"><?php the_time('F j, Y') ?></time>
+                <time datetime="<?php the_time(get_option('date_format')) ?>" itemprop="datePublished"><?php the_time(get_option('date_format')) ?></time>
             </div>
             <div class="article-tag">
                 <i class="fa fa-eye"></i>
@@ -53,5 +54,27 @@
         <?php endif ?>
     </div>
 </article>
+
+<?php if (get_theme_settings('enable_code_highlight')) : ?>
+
+    <?php if ($style = get_theme_settings('custom_code_highlight_style')) : ?>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.9/build/styles/<?php echo $style ?>.min.css">
+    <?php endif ?>
+
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.9/build/highlight.min.js"></script>
+
+    <?php if (get_theme_settings('enable_code_line_number')) : ?>
+        <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js"></script>
+    <?php endif ?>
+
+    <script>
+        hljs.initHighlightingOnLoad();
+
+        <?php if (get_theme_settings('enable_code_line_number')) : ?>
+            hljs.initLineNumbersOnLoad();
+        <?php endif ?>
+
+    </script>
+<?php endif ?>
 
 <?php endif ?>

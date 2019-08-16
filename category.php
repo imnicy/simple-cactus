@@ -38,7 +38,7 @@
                     <?php foreach ($archives as $archive) : ?>
                     <li class="post-item">
                         <div class="meta">
-                            <time datetime="<?php $dateFormat = date('F j, Y', strtotime($archive->post_date)); echo $dateFormat ?>" itemprop="datePublished">
+                            <time datetime="<?php $dateFormat = date(get_option('date_format'), strtotime($archive->post_date)); echo $dateFormat ?>" itemprop="datePublished">
                                 <?php echo $dateFormat ?>
                             </time>
                         </div>

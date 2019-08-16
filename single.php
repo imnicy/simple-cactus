@@ -68,6 +68,25 @@
         </section>
     </div>
 
+<?php if (get_theme_settings('display_toc')) : ?>
+    <script src="<?php echo get_template_directory_uri() . '/assets/js/jquery.toc.min.js' ?>"></script>
+
+    <script id="display-single-toc">
+        $(function() {
+            $("#TableOfContents").initTOC({
+                selector: "h2, h3, h4, h5, h6",
+                scope: ".post",
+            });
+
+            $("#TableOfContents a").click(function(e) {
+                e.preventDefault();
+                var aid = $( this ).attr( "href" );
+                $( "html, body" ).animate( { scrollTop: $(aid).offset().top - 80 }, "slow" );
+            });
+        });
+    </script>
+<?php endif  ?>
+
 <?php
     get_sidebar();
     get_footer();

@@ -1,4 +1,5 @@
 <?php
+
     $siteName = get_bloginfo('name');
     $icpNumber = '<a href="http://www.miitbeian.gov.cn" rel="external nofollow noopener noreferrer" target="_blank">'.get_theme_settings('site_icp_number').'</a>';
 
@@ -14,7 +15,7 @@
     </div>
 </footer>
 
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <?php wp_footer(); ?>
 

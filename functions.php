@@ -37,7 +37,13 @@ function get_theme_settings($name, $default = null, $escaping = true)
 {
     $options = get_option(SIMPLE_CACTUS_SETTING_GROUP);
 
-    return isset($options[$name]) ? ($escaping ? esc_attr($options[$name]) : $options[$name]) : $default;
+    $value = $options[$name] ?? null;
+
+    if (! $value) {
+        $value = $default;
+    }
+
+    return $escaping ? esc_attr($value) : $value;
 }
 
 function theme_setting_is_checked($name)
@@ -46,6 +52,32 @@ function theme_setting_is_checked($name)
 
     return $value == 1 ? ' checked' : '';
 }
+
+function active_theme()
+{
+    if (! get_option(SIMPLE_CACTUS_SETTING_GROUP)) {
+
+        $default_options = [
+            'site_logo_url' => '',
+            'site_favicon_url' => '',
+            'site_icp_number' => '',
+            'find_me_through_github' => '',
+            'custom_footer_text_style' => 'Copyright © %1$s %2$s',
+            'display_footer_menu' => 0,
+            'display_links_to_this_article' => 1,
+            'display_categories' => 0,
+            'display_tags' => 1,
+            'display_toc' => 1,
+            'enable_code_highlight' => 1,
+            'enable_code_line_number' => 0,
+            'custom_code_highlight_style' => ''
+        ];
+
+        update_option(SIMPLE_CACTUS_SETTING_GROUP, $default_options);
+    }
+}
+
+add_action('after_setup_theme', 'active_theme');
 
 add_action('wp_enqueue_scripts', 'update_jquery', 11);
 
