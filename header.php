@@ -47,7 +47,22 @@ else {
     <meta name="author" content="IMNICY">
 
     <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="//cdn.bootcss.com/justifiedGallery/3.7.0/css/justifiedGallery.min.css" rel="stylesheet">
+
+    <?php if (is_single() || is_page()) : ?>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css">
+        <style>
+            .markdown-body {
+                box-sizing: border-box;
+                margin: 50px 0;
+            }
+
+            @media (max-width: 767px) {
+                .markdown-body {
+
+                }
+            }
+        </style>
+    <?php endif ?>
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/style.css' ?>">
 

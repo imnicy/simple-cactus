@@ -46,11 +46,11 @@ function get_theme_settings($name, $default = null, $escaping = true)
     return $escaping ? esc_attr($value) : $value;
 }
 
-function theme_setting_is_checked($name)
+function theme_setting_is_checked($name, $condition = 1)
 {
     $value = get_theme_settings($name);
 
-    return $value == 1 ? ' checked' : '';
+    return $value == $condition ? ' checked' : '';
 }
 
 function active_theme()
@@ -67,10 +67,9 @@ function active_theme()
             'display_links_to_this_article' => 1,
             'display_categories' => 0,
             'display_tags' => 1,
-            'display_toc' => 1,
             'enable_code_highlight' => 1,
             'enable_code_line_number' => 0,
-            'custom_code_highlight_style' => ''
+            'custom_code_highlight_style' => 'default'
         ];
 
         update_option(SIMPLE_CACTUS_SETTING_GROUP, $default_options);

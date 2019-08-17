@@ -41,16 +41,6 @@
                     <span id="i-next" class="info" style="display:none;">Next post</span>
                     <span id="i-top" class="info" style="display:none;">Back to top</span>
                 </span>
-                <br>
-                <?php if (get_theme_settings('display_toc')) : ?>
-
-                <div id="toc">
-                    <nav id="TableOfContents">
-                        <ul></ul>
-                    </nav>
-                </div>
-
-                <?php endif ?>
             </span>
     </div>
     <div class="content index width mx-auto px3 my3">
@@ -67,25 +57,6 @@
             ?>
         </section>
     </div>
-
-<?php if (get_theme_settings('display_toc')) : ?>
-    <script src="<?php echo get_template_directory_uri() . '/assets/js/jquery.toc.min.js' ?>"></script>
-
-    <script id="display-single-toc">
-        $(function() {
-            $("#TableOfContents").initTOC({
-                selector: "h2, h3, h4, h5, h6",
-                scope: ".post",
-            });
-
-            $("#TableOfContents a").click(function(e) {
-                e.preventDefault();
-                var aid = $( this ).attr( "href" );
-                $( "html, body" ).animate( { scrollTop: $(aid).offset().top - 80 }, "slow" );
-            });
-        });
-    </script>
-<?php endif  ?>
 
 <?php
     get_sidebar();

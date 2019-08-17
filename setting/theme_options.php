@@ -16,13 +16,13 @@
             <tbody>
             <tr>
                 <th scope="row">
-                    <label for="site_logo_url"><?php echo __('Site Logo (URL)', 'simple_cactus') ?></label></th>
+                    <label for="site_logo_url"><?php echo __('Site logo (URL)', 'simple_cactus') ?></label></th>
                 <td>
                     <input name="<?php echo simple_cactus_option_name('site_logo_url') ?>" type="url" id="site_logo_url" value="<?php echo get_theme_settings('site_logo_url') ?>" class="regular-text"></td>
             </tr>
             <tr>
                 <th scope="row">
-                    <label for="site_favicon_url"><?php echo __('Site Favicon (URL)', 'simple_cactus') ?></label></th>
+                    <label for="site_favicon_url"><?php echo __('Site favicon (URL)', 'simple_cactus') ?></label></th>
                 <td>
                     <input name="<?php echo simple_cactus_option_name('site_favicon_url') ?>" type="url" id="site_favicon_url" aria-describedby="site_favicon_url_description" value="<?php echo get_theme_settings('site_favicon_url') ?>" class="regular-text">
                     <p class="description" id="site_favicon_url_description"></p>
@@ -30,13 +30,13 @@
             </tr>
             <tr>
                 <th scope="row">
-                    <label for="site_icp_number"><?php echo __('Site ICP Number', 'simple_cactus') ?></label></th>
+                    <label for="site_icp_number"><?php echo __('Site ICP number', 'simple_cactus') ?></label></th>
                 <td>
                     <input name="<?php echo simple_cactus_option_name('site_icp_number') ?>" type="text" id="site_icp_number" value="<?php echo get_theme_settings('site_icp_number') ?>" class="regular-text code"></td>
             </tr>
             <tr>
                 <th scope="row">
-                    <label for="find_me_through_github"><?php echo __('Find me through Github?', 'simple_cactus') ?></label></th>
+                    <label for="find_me_through_github"><?php echo __('Find me through github?', 'simple_cactus') ?></label></th>
                 <td>
                     <input name="<?php echo simple_cactus_option_name('find_me_through_github') ?>" type="url" id="find_me_through_github" aria-describedby="find_me_through_github_description" value="<?php echo get_theme_settings('find_me_through_github') ?>" class="regular-text code">
                     <p class="description" id="find_me_through_github_description">
@@ -45,7 +45,7 @@
             </tr>
             <tr>
                 <th scope="row">
-                    <label for="custom_footer_text_style"><?php echo __('Custom Footer Text Style', 'simple_cactus') ?></label></th>
+                    <label for="custom_footer_text_style"><?php echo __('Custom footer text style', 'simple_cactus') ?></label></th>
                 <td>
                     <input name="<?php echo simple_cactus_option_name('custom_footer_text_style') ?>" type="text" id="custom_footer_text_style" aria-describedby="custom_footer_text_style_description" value="<?php echo get_theme_settings('custom_footer_text_style') ?>" class="regular-text ltr">
                     <p class="description" id="custom_footer_text_style_description">
@@ -54,11 +54,11 @@
                 </td>
             </tr>
             <tr>
-                <th scope="row"><?php echo __('Some Display Options', 'simple_cactus') ?></th>
+                <th scope="row"><?php echo __('Some display options', 'simple_cactus') ?></th>
                 <td>
                     <fieldset>
                         <legend class="screen-reader-text">
-                            <span><?php echo __('Display footer menu?', 'simple_cactus') ?></span>
+                            <span><?php echo __('Display Footer Menu?', 'simple_cactus') ?></span>
                         </legend>
                         <label for="display_footer_menu">
                             <input name="<?php echo simple_cactus_option_name('display_footer_menu') ?>" <?php echo theme_setting_is_checked('display_footer_menu') ?> type="checkbox" id="display_footer_menu" value="1"><?php echo __('Display footer menu?', 'simple_cactus') ?></label>
@@ -84,13 +84,6 @@
                         <label for="display_tags">
                             <input name="<?php echo simple_cactus_option_name('display_tags') ?>" <?php echo theme_setting_is_checked('display_tags') ?> type="checkbox" id="display_tags" value="1"><?php echo __('Display tags in single?', 'simple_cactus') ?></label>
                     </fieldset>
-                    <fieldset>
-                        <legend class="screen-reader-text">
-                            <span><?php echo __('Display TOC in single?', 'simple_cactus') ?></span>
-                        </legend>
-                        <label for="display_toc">
-                            <input name="<?php echo simple_cactus_option_name('display_toc') ?>" <?php echo theme_setting_is_checked('display_toc') ?> type="checkbox" id="display_toc" value="1"><?php echo __('Display TOC in single?', 'simple_cactus') ?></label>
-                    </fieldset>
                 </td>
             </tr>
             <tr>
@@ -101,7 +94,7 @@
                         <legend class="screen-reader-text">
                             <span><?php echo __('Enable code highlighting', 'simple_cactus') ?></span>
                         </legend>
-                        <label for="display_toc">
+                        <label for="enable_code_highlight">
                             <input name="<?php echo simple_cactus_option_name('enable_code_highlight') ?>" <?php echo theme_setting_is_checked('enable_code_highlight') ?> type="checkbox" id="enable_code_highlight" value="1"><?php echo __('Use Highlight.js to support code highlighting', 'simple_cactus') ?></label>
                     </fieldset>
                 </td>

@@ -33,7 +33,11 @@
     </header>
     <div class="content" itemprop="articleBody">
 
-        <?php the_content() ?>
+        <div class="markdown-body">
+
+            <?php the_content() ?>
+
+        </div>
 
         <?php if (is_single()) : ?>
 
