@@ -43,7 +43,7 @@
                             </time>
                         </div>
                         <span>
-                            <a href="<?php get_permalink($archive->ID) ?>"><?php echo $archive->post_title ?></a>
+                            <a href="<?php echo get_permalink($archive->ID) ?>"><?php echo $archive->post_title ?></a>
                         </span>
                     </li>
                     <?php endforeach ?>
