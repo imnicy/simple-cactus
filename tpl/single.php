@@ -38,14 +38,14 @@
 
             <?php if (get_theme_settings('display_links_to_this_article')) : ?>
 
-                <h2>本文链接：</h2>
+                <h2>本文链接</h2>
                 <p><a href="<?php the_permalink() ?>" target="_blank"><?php the_permalink() ?></a></p>
 
             <?php endif ?>
 
             <?php if (get_theme_settings('display_categories')) : ?>
 
-                <h2>本文发布在：</h2>
+                <h2>本文发布在</h2>
                 <?php the_category() ?>
 
             <?php endif ?>

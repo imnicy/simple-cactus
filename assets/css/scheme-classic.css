@@ -688,10 +688,10 @@ body {
     color: inherit;
     text-decoration: none;
 }
-#header-post a.icon {
+#header-post span.icon {
     background: none;
 }
-#header-post a.icon:hover {
+#header-post span.icon:hover {
     color: rgba(86,124,119,0.4);
 }
 #header-post ol {

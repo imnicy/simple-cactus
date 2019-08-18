@@ -18,11 +18,20 @@
             <span id="actions">
                 <ul>
                     <li>
-                        <a class="icon"
-                           href="#">
-                            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();"
-                               onmouseout="$('#i-next').toggle();"></i>
-                        </a>
+                        <span class="icon">
+                            <?php previous_post_link('%link', '
+                            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$(\'#i-prev\').toggle();"
+                               onmouseout="$(\'#i-prev\').toggle();"></i>
+                        ', 'TRUE'); ?>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <?php next_post_link('%link', '
+                            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$(\'#i-next\').toggle();"
+                               onmouseout="$(\'#i-next\').toggle();"></i>
+                        ', 'TRUE'); ?>
+                        </span>
                     </li>
                     <li>
                         <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
@@ -34,6 +43,7 @@
                 <span id="i-prev" class="info" style="display:none;">Previous post</span>
                 <span id="i-next" class="info" style="display:none;">Next post</span>
                 <span id="i-top" class="info" style="display:none;">Back to top</span>
+            </span>
             <br/>
             <div id="toc"></div>
         </span>
