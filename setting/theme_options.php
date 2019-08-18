@@ -5,7 +5,7 @@
     <hr class="wp-header-end">
 
     <div id="message" class="updated">
-        <p><?php echo __('If these options aren\'t free enough, tell me through <a href="https://github.com/imnicy/simple_cactus">Github</a>') ?></p>
+        <p><?php echo __('If these options aren\'t free enough, tell me through <a href="https://github.com/imnicy/simple-cactus">Github</a>') ?></p>
     </div>
 
     <form method="post" action="options.php">
