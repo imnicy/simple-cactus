@@ -11,16 +11,14 @@ foreach (glob(__DIR__ . '/widgets/*Widget.php') as $widget) {
     require $widget;
 }
 
-function update_jquery() {
-
-    if( !is_admin()){
-        wp_deregister_script('jquery');
-        wp_register_script('jquery', 'https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js', false, null);
-        wp_enqueue_script('jquery');
-        wp_deregister_script('jquery-migrate');
-        wp_register_script('jquery-migrate', 'https://cdn.bootcss.com/jquery-migrate/3.0.0/jquery-migrate.min.js', false, null);
-        wp_enqueue_script('jquery-migrate');
-    }
+function update_jquery()
+{
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', 'https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js', false, null);
+    wp_enqueue_script('jquery');
+    wp_deregister_script('jquery-migrate');
+    wp_register_script('jquery-migrate', 'https://cdn.bootcss.com/jquery-migrate/3.0.0/jquery-migrate.min.js', false, null);
+    wp_enqueue_script('jquery-migrate');
 }
 
 function theme_options_page()
@@ -58,6 +56,7 @@ function active_theme()
     if (! get_option(SIMPLE_CACTUS_SETTING_GROUP)) {
 
         $default_options = [
+            'color_scheme' => 'white',
             'site_logo_url' => '',
             'site_favicon_url' => '',
             'site_icp_number' => '',
@@ -66,10 +65,7 @@ function active_theme()
             'display_footer_menu' => 0,
             'display_links_to_this_article' => 1,
             'display_categories' => 0,
-            'display_tags' => 1,
-            'enable_code_highlight' => 1,
-            'enable_code_line_number' => 0,
-            'custom_code_highlight_style' => 'default'
+            'display_tags' => 1
         ];
 
         update_option(SIMPLE_CACTUS_SETTING_GROUP, $default_options);

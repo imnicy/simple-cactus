@@ -95,7 +95,7 @@ class BlockWidget extends WP_Widget
 
                 $display .= <<<EOL
                     <li class="project-item">
-                        <a href="$url" rel="external nofollow noopener noreferrer" target="_blank"> $name </a>: $description
+                        <a href="$url" rel="external nofollow noopener noreferrer" target="_blank">$name</a>: $description
                     </li>
 EOL;
             }
@@ -107,7 +107,7 @@ EOL;
             <li class="homepage-block-display-n">
                 <section id="projects">
                     <span class="h1">
-                        <a href="#" rel="external nofollow noopener noreferrer"> $title </a>
+                        <a href="#" rel="external nofollow noopener noreferrer">$title</a>
                     </span>
                     $display
                 </section>

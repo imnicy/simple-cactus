@@ -1,26 +1,24 @@
-<?php
-    get_header();
-?>
+<?php get_header() ?>
 
-    <div class="content index width mx-auto px3 my3">
+    <div class="content index py4">
 
         <?php get_template_part('tpl/header') ?>
 
-        <section id="wrapper" class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+            <?php get_template_part('tpl/single') ?>
+
+        </article>
+
+        <div class="blog-post-comments">
 
             <?php
-                get_template_part('tpl/single') ;
-
-                // If comments are open or we have at least one comment, load up the comment template.
-                if ( comments_open() || get_comments_number() ) {
-                    comments_template();
-                }
+            // If comments are open or we have at least one comment, load up the comment template.
+            if (comments_open() || get_comments_number()) {
+                comments_template();
+            }
             ?>
 
-        </section>
-    </div>
+        </div>
 
-<?php
-    get_sidebar();
-    get_footer();
-?>
+<?php get_footer() ?>

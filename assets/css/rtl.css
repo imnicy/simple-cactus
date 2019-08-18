@@ -1,0 +1,39 @@
+
+.rtl {
+    font-family: Vazir, sans-serif;
+    direction: rtl;
+}
+.rtl #nav li {
+    margin-right: 0px !important;
+    padding-left: 15px;
+    border-right: 0px !important;
+    border-left: 1px dotted $color-accent-1;
+}
+.rtl #nav li:last-child {
+    margin-right: 15px !important;
+    border-left: 0 !important;
+}
+.rtl #header #logo {
+    float: right;
+}
+.rtl #footer li {
+    margin-right: 0px;
+    padding-left: 15px;
+    border-right: 0px;
+    border-left: 1px dotted $color-border;
+}
+.rtl #footer li:last-child {
+    margin-right: 15px !important;
+    border-left: 0 !important;
+}
+.rtl #footer #logo {
+    float: right;
+}
+.rtl article .content h2:before {
+    right: -1rem;
+}
+@media (min-width: 480px) {
+    .post-list .post-item .meta {
+        text-align: right;
+    }
+}

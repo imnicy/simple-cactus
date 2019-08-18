@@ -23,18 +23,16 @@ else {
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
+    <!-- so meta -->
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <meta name="wap-font-scale" content="no">
-    <meta http-equiv="Cache-Control" content="no-transform"/>
-    <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <title><?php bloginfo('name'); ?> <?php wp_title( ' - ', true, 'left' ); ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <meta name="keywords" content="<?php echo $keywords ?>" />
+    <meta name="description" content="<?php echo $description ?>" />
 
     <?php if ($favicon = get_theme_settings('site_favicon_url')) : ?>
         <link rel="shortcut icon" href="<?php echo $favicon ?>">
@@ -42,39 +40,37 @@ else {
         <link rel="shortcut icon" href="<?php echo get_template_directory_uri() . '/images/favicon.ico' ?>">
     <?php endif ?>
 
-    <meta name="keywords" content="<?php echo $keywords ?>" />
-    <meta name="description" content="<?php echo $description ?>" />
-    <meta name="author" content="IMNICY">
+    <!-- title -->
+    <title><?php bloginfo('name'); ?> <?php wp_title( ' - ', true, 'left' ); ?></title>
+    <!-- styles -->
 
-    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.min.css" rel="stylesheet">
 
-    <?php if (is_single() || is_page()) : ?>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css">
-        <style>
-            .markdown-body {
-                box-sizing: border-box;
-                margin: 50px 0;
-            }
+    <?php
+        switch (get_theme_settings('color_scheme')) {
 
-            @media (max-width: 767px) {
-                .markdown-body {
+            case 'dark':
+                echo '<link href="'.get_template_directory_uri().'/assets/css/scheme-dark.css" rel="stylesheet">';
+                break;
 
-                }
-            }
-        </style>
-    <?php endif ?>
+            case 'light':
+                echo '<link href="'.get_template_directory_uri().'/assets/css/scheme-light.css" rel="stylesheet">';
+                break;
+
+            case 'classic':
+                echo '<link href="'.get_template_directory_uri().'/assets/css/scheme-classic.css" rel="stylesheet">';
+                break;
+
+            default :
+                echo '<link href="'.get_template_directory_uri().'/assets/css/scheme-white.css" rel="stylesheet">';
+                break;
+        }
+    ?>
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/style.css' ?>">
-
-    <script>
-        document.addEventListener("error", function(e) {
-            var elem = e.target;
-            if (elem.tagName.toLowerCase() == 'img') {
-                elem.style.display = 'none'
-            }
-        }, true);
-    </script>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/assets/css/rtl.css' ?>">
 
     <?php wp_head(); ?>
 </head>
-<body>
+
+<body class="max-width mx-auto px3 ltr">

@@ -1,6 +1,4 @@
-<?php
-    get_header();
-?>
+<?php get_header() ?>
 
     <div class="content index width mx-auto px3 my4">
 
@@ -20,9 +18,6 @@
                 </ul>
             </div>
         </section>
-    </div>
 
-<?php
-    get_sidebar();
-    get_footer();
-?>
+
+<?php get_footer() ?>
